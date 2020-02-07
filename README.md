@@ -76,4 +76,5 @@ Q: Can you show me how to build X?
 A: We are always looking for new sample ideas, please email dev-samples@stripe.com with your suggestion!
 
 ## Author(s)
+[@adreyfus-stripe](https://twitter.com/adrind)
 [@fay-stripe](https://twitter.com/mfaywu)
