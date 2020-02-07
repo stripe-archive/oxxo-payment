@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stripe Card Elements sample</title>
+    <meta name="description" content="A demo of Stripe Payment Intents" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/script.js" defer></script>
+    <!-- Library for generating OXXO bar codes -->
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/barcodes/JsBarcode.code128.min.js"></script>
+  </head>
+
+  <body>
+    <div class="sr-root">
+      <div class="sr-main">
+        <div class="sr-picker">
+          <button class="sr-pm-button selected" id="card-button">Tarjeta</button
+          ><button class="sr-pm-button" id="oxxo-button">OXXO</button>
+        </div>
+        <form class="sr-payment-form card">
+          <div>
+            <div class="sr-input sr-element sr-card-element" id="card-element">
+              <!-- A Stripe card Element will be inserted here. -->
+            </div>
+            <div class="sr-combo-inputs hidden" id="oxxo-billing-details">
+              <div class="col">
+                <label for="name">
+                  Nombre
+                </label>
+                <input id="name" name="name" placeholder="Fulano de Tal"  />
+              </div>
+              <div class="col">
+                <label for="email">
+                  Correo de Electronic
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="fulnao.de.tal@example.com"
+                  
+                />
+              </div>
+            </div>
+          </div>
+          <div class="sr-field-error" id="card-errors" role="alert"></div>
+          <button id="submit" type="submit">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pago</span><span id="order-amount"></span>
+          </button>
+        </form>
+        <div class="sr-result-card hidden">
+          <p>Pago completado!<br /></p>
+          <pre>
+            <code></code>
+          </pre>
+        </div>
+        <div class="sr-result-oxxo hidden">
+          <h1>¡Gracias! Solo falta un paso más:</h1>
+          <div class="sr-instructions">
+            <p>
+              Instrucciones de pago en OXXO:
+              <p>1. Entregue la factura al cajero para que escanee el código de barras.</p>
+              <p>2. Proporcione el pago en efectivo al cajero.</p>
+              <p>3. Una vez completado el pago, guarde el recibo de su pago para sus registros.</p>
+              <p>4. Para cualquier duda o aclaración, contacte al proveedor de los bienes o servicio.</p>
+            </p>
+          </div>  
+          <table class="sr-tabular-info">
+            <tr>
+              <th>Monto</th>
+              <th>Expira</th>
+            </tr>
+            <tr>
+              <td><span class="order-amount"></span></td>
+              <td><span class="oxxo-expiry-date"></span></td>
+            </tr>
+          </table>
+
+          <img width="150px" src="https://cdn.glitch.com/4b07d8fe-0ac6-478d-9303-5ed5d5c1220d%2Foxxo.png?v=1571866932777"></img>
+          <div class="oxxo-display"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
