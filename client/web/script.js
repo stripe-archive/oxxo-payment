@@ -36,7 +36,7 @@ fetch("/create-payment-intent", {
       });
     document.querySelectorAll(".sr-pm-button").forEach(function(el) {
       el.addEventListener("click", function(evt) {
-        // Handle switching between Card and Oxxo
+        // Handle switching between Card and OXXO
         var id = evt.target.id;
         if (id === "card-button") {
           showElement(".sr-payment-form.card");
@@ -103,7 +103,7 @@ var payWithCard = function(stripe, card, clientSecret) {
     });
 };
 
-/* Called when customer pays with Oxxo */
+/* Called when customer pays with OXXO */
 var payWithOxxo = function(stripe, clientSecret) {
   // Initiate the payment.
   // confirmOxxoPayment will create an OXXO voucher and return display details
@@ -200,7 +200,7 @@ var displayOxxoDetails = function(clientSecret) {
 
 var showError = function(errorMsgText) {
   changeLoadingState(false);
-  console.log("here", errorMsgText);
+
   var errorMsg = document.querySelector(".sr-field-error");
   errorMsg.textContent = errorMsgText;
   setTimeout(function() {
@@ -212,7 +212,7 @@ var showError = function(errorMsgText) {
 var changeLoadingState = function(isLoading) {
   const selectedPaymentMethod = document.querySelector(".sr-pm-button.selected")
     .dataset.paymentmethod;
-  console.log("selected", selectedPaymentMethod);
+
   const className = "." + selectedPaymentMethod;
   if (isLoading) {
     showElement(className + " #spinner");
