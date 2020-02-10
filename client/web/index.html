@@ -19,20 +19,33 @@
     <div class="sr-root">
       <div class="sr-main">
         <div class="sr-picker">
-          <button class="sr-pm-button selected" id="card-button">Tarjeta</button
-          ><button class="sr-pm-button" id="oxxo-button">OXXO</button>
+          <button class="sr-pm-button selected" data-paymentMethod="card" id="card-button">Tarjeta</button
+          ><button class="sr-pm-button" id="oxxo-button" data-paymentMethod="oxxo">OXXO</button>
         </div>
+
+        <!-- Payment form for cards -->
         <form class="sr-payment-form card">
           <div>
             <div class="sr-input sr-element sr-card-element" id="card-element">
               <!-- A Stripe card Element will be inserted here. -->
             </div>
-            <div class="sr-combo-inputs hidden" id="oxxo-billing-details">
+          </div>
+          <button id="submit" type="submit">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pago</span><span id="order-amount"></span>
+          </button>
+        </form>
+
+        <!-- Payment form for Oxxo -->
+        <form class="sr-payment-form oxxo hidden">
+          <div>
+            <div class="sr-combo-inputs" id="oxxo-billing-details">
+              <!-- Name and email are required for the payment -->
               <div class="col">
                 <label for="name">
                   Nombre
                 </label>
-                <input id="name" name="name" placeholder="Fulano de Tal"  />
+                <input id="name" name="name" placeholder="Fulano de Tal" required  />
               </div>
               <div class="col">
                 <label for="email">
@@ -43,23 +56,29 @@
                   name="email"
                   type="email"
                   placeholder="fulnao.de.tal@example.com"
-                  
+                  required
                 />
               </div>
             </div>
           </div>
-          <div class="sr-field-error" id="card-errors" role="alert"></div>
           <button id="submit" type="submit">
             <div class="spinner hidden" id="spinner"></div>
             <span id="button-text">Pago</span><span id="order-amount"></span>
           </button>
         </form>
+
+        <!-- Show any errors that happen from Stripe -->
+        <div class="sr-field-error" role="alert"></div>
+
+        <!-- Success UI for Cards -->
         <div class="sr-result-card hidden">
           <p>Pago completado!<br /></p>
           <pre>
             <code></code>
           </pre>
         </div>
+
+        <!-- Success UI for Oxxo -->
         <div class="sr-result-oxxo hidden">
           <h1>¡Gracias! Solo falta un paso más:</h1>
           <div class="sr-instructions">
@@ -82,7 +101,7 @@
             </tr>
           </table>
 
-          <img width="150px" src="https://cdn.glitch.com/4b07d8fe-0ac6-478d-9303-5ed5d5c1220d%2Foxxo.png?v=1571866932777"></img>
+          <img width="150px" src="https://cdn.glitch.com/4b07d8fe-0ac6-478d-9303-5ed5d5c1220d%2Foxxo.png?v=1571866932777" alt="The Oxxo payment method logo"></img>
           <div class="oxxo-display"></div>
         </div>
       </div>
