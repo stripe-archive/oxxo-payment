@@ -11,7 +11,7 @@ This sample shows how to:
 
 ## How to run locally
 
-This sample includes 4 server implementations in Node, Ruby, Python, and PHP for the two integration types. 
+This sample includes 4 server implementations in Node, Ruby, Python, and PHP. 
 
 Follow the steps below to run locally.
 
@@ -76,5 +76,4 @@ Q: Can you show me how to build X?
 A: We are always looking for new sample ideas, please email dev-samples@stripe.com with your suggestion!
 
 ## Author(s)
-[@adreyfus-stripe](https://twitter.com/adrind)
 [@fay-stripe](https://twitter.com/mfaywu)
