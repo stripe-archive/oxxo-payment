@@ -19,7 +19,7 @@ Follow the steps below to run locally.
 You can clone the sample here:
 
 ```
-git clone https://github.com/fay-stripe/web-oxxo-payments
+git clone https://github.com/stripe-samples/oxxo-payment
 ```
 
 Copy the .env.example file into a file named .env in the folder of the server you want to use. For example:
@@ -33,6 +33,15 @@ You will need a Stripe account in order to run the demo. Once you set up your ac
 ```
 STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
 STRIPE_SECRET_KEY=<replace-with-your-secret-key>
+```
+
+Because OXXO is in private beta, you will also need to specify a Stripe API version as well as the OXXO beta version. 
+You can see which API version you're running at https://dashboard.stripe.com/developers. 
+
+The current OXXO beta version is v1. You can see all released versions at https://stripe.com/docs/payments/oxxo#api.
+```
+STRIPE_API_VERSION=<replace-with-your-api-version>
+OXXO_BETA_VERSION=v1
 ```
 
 `STATIC_DIR` tells the server where to the client files are located and does not need to be modified unless you move the server files.

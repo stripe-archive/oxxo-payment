@@ -1,7 +1,7 @@
 {
-    "name": "stripe-sample-web-elements-card-payment",
+    "name": "stripe-sample-oxxo-payment",
     "version": "1.0.0",
-    "description": "Simple card checkout form",
+    "description": "Simple card and OXXO checkout form",
     "main": "server.js",
     "scripts": {
       "start": "node server/node/server.js",

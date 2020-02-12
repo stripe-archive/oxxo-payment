@@ -28,6 +28,9 @@ $container['logger'] = function ($c) {
 
 $app->add(function ($request, $response, $next) {
     Stripe::setApiKey(getenv('STRIPE_SECRET_KEY'));
+    $api_version = getenv('STRIPE_API_VERSION');
+    $oxxo_beta_version = getenv('OXXO_BETA_VERSION');
+    Stripe::setApiVersion("$api_version; oxxo_beta=$oxxo_beta_version");
     return $next($request, $response);
 });
 

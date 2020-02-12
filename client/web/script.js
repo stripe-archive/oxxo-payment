@@ -175,10 +175,8 @@ var displayOxxoDetails = function(clientSecret) {
       paymentIntent.next_action.display_oxxo_details.expires_after * 1000
     ).toLocaleDateString("es-MX");
 
-    const receiverInfo = document.querySelector(".oxxo-display");
-    receiverInfo.innerHTML = `
-    <svg id="barcode"></svg>
-    `;
+    document.querySelector(".oxxo-display").innerHTML = '<svg id="barcode"></svg>';
+
     JsBarcode("#barcode", number, {
       // Group the numbers in 4 to make it easier to key i.
       text: number.match(/.{1,4}/g).join("  "),

@@ -1,13 +1,13 @@
 {
-  "name": "stripe-placing-a-hold-auto-confirmation",
+  "name": "oxxo-payment",
   "version": "1.0.0",
-  "description": "How to place a hold on a card",
+  "description": "Simple card and OXXO checkout form",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "@adreyfus-stripe",
+  "author": "@fay-stripe",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

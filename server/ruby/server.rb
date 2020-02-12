@@ -7,6 +7,8 @@ require 'dotenv'
 # Replace if using a different env file or config
 Dotenv.load
 Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+Stripe.api_version =
+  "#{ENV['STRIPE_API_VERSION']}; oxxo_beta=#{ENV['OXXO_BETA_VERSION']}"
 
 set :static, true
 set :public_folder, File.join(File.dirname(__FILE__), ENV['STATIC_DIR'])
