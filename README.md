@@ -11,13 +11,21 @@ This sample shows how to:
 * 👂 Set up a webhook to listen for events
 * 💁‍ Handle next actions for displaying OXXO voucher details
 
+### Demo
+
+<img src="./web-oxxo-payment.gif" alt="Collecting an OXXO payment" align="center">
+
+See a [hosted version](https://q66ty.sse.codesandbox.io/) of the sample or fork a cope on [codesandbox.io](https://codesandbox.io/s/stripe-sample-oxxo-payment-q66ty)
+
+The demo is running in test mode. Use an email of the form {any_prefix}fill_never@{any_domain} to simulate an OXXO voucher which expires before a customer pays. Use any other email to simulate an OXXO voucher which a customer pays successfully.
+
+Read more about testing at https://stripe.com/docs/payments/oxxo#test-integration.
+
 ## How to run locally
 
 This sample includes 4 server implementations in Node, Ruby, Python, and PHP. 
 
 Follow the steps below to run locally.
-
-<img src="./web-oxxo-payment.gif" alt="Collecting a SEPA Debit mandate and payment" align="center">
 
 **1. Clone and configure the sample**
 You can clone the sample here:
