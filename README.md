@@ -16,7 +16,7 @@ This sample shows how to:
 
 <img src="./web-oxxo-payment.gif" alt="Collecting an OXXO payment" align="center">
 
-See a [hosted version](https://q66ty.sse.codesandbox.io/) of the sample or fork a cope on [codesandbox.io](https://codesandbox.io/s/stripe-sample-oxxo-payment-q66ty)
+See a [hosted version](https://q66ty.sse.codesandbox.io/) of the sample or fork a copy on [codesandbox.io](https://codesandbox.io/s/stripe-sample-oxxo-payment-q66ty)
 
 The demo is running in test mode. Use an email of the form `{any_prefix}fill_never@{any_domain}` to simulate an OXXO voucher which expires before a customer pays. Use any other email to simulate an OXXO voucher which a customer pays successfully.
 
