@@ -1,19 +1,30 @@
-# Paying with OXXO or Cards on the web 
+# Paying with OXXO or Cards on the web
+
 Stripe users in Mexico can accept OXXO payments from customers in Mexico by using the Payment Intents and Payment Methods APIs. Customers pay with OXXO by providing a generated number and cash payment at an OXXO store. Stripe will notify you when the payment is completed.
 
-OXXO is currently in private Beta, only available to Mexico users. Interested in participating? Activate the payment method in your [Dashboard settings](https://dashboard.stripe.com/settings/payments).
+OXXO is currently in private beta, only available Stripe users in Mexico. Interested in participating? Activate the payment method in your [Dashboard settings](https://dashboard.stripe.com/settings/payments).
 
-The [Payment Intents API](https://stripe.com/docs/api/payment_intents) makes it simple to accept multiple payment methods on the web. You can build a payment form that easily handles payment methods like OXXO alongside simpler flows like cards. 
+The [PaymentIntents API](https://stripe.com/docs/api/payment_intents) supports multiple payment methods, allowing you to build a payment form that handles payment methods like OXXO alongside other methods like cards.
 
 This sample shows how to:
 
-* 🏦💳 Accept OXXO and card payments
-* 👂 Set up a webhook to listen for events
-* 💁‍ Handle next actions for displaying OXXO voucher details
+- 🏦💳 Accept OXXO and card payments
+- 👂 Set up a webhook to listen for events
+- 💁‍ Handle next actions for displaying OXXO voucher details
+
+### Demo
+
+<img src="./web-oxxo-payment.gif" alt="Collecting an OXXO payment" align="center">
+
+See a [hosted version](https://q66ty.sse.codesandbox.io/) of the sample or fork a cope on [codesandbox.io](https://codesandbox.io/s/stripe-sample-oxxo-payment-q66ty)
+
+The demo is running in test mode. Use an email of the form `{any_prefix}fill_never@{any_domain}` to simulate an OXXO voucher which expires before a customer pays. Use any other email to simulate an OXXO voucher which a customer pays successfully.
+
+Read more about testing at https://stripe.com/docs/payments/oxxo#test-integration.
 
 ## How to run locally
 
-This sample includes 4 server implementations in Node, Ruby, Python, and PHP. 
+This sample includes 4 server implementations in Node, Ruby, Python, and PHP.
 
 Follow the steps below to run locally.
 
@@ -37,10 +48,11 @@ STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
 STRIPE_SECRET_KEY=<replace-with-your-secret-key>
 ```
 
-Because OXXO is in private beta, you will also need to specify a Stripe API version as well as the OXXO beta version. 
-You can see which API version you're running at https://dashboard.stripe.com/developers. 
+Because OXXO is in private beta, you will also need to specify a Stripe API version as well as the OXXO beta version.
+You can see which API version you're running at https://dashboard.stripe.com/developers.
 
 The current OXXO beta version is v1. You can see all released versions at https://stripe.com/docs/payments/oxxo#api.
+
 ```
 STRIPE_API_VERSION=<replace-with-your-api-version>
 OXXO_BETA_VERSION=v1
@@ -74,10 +86,10 @@ The CLI will print a webhook secret key to the console. Set `STRIPE_WEBHOOK_SECR
 
 You should see events logged in the console where the CLI is running.
 
-When you are ready to create a live webhook endpoint, follow our guide in the docs on [configuring a webhook endpoint in the dashboard](https://stripe.com/docs/webhooks/setup#configure-webhook-settings). 
-
+When you are ready to create a live webhook endpoint, follow our guide in the docs on [configuring a webhook endpoint in the dashboard](https://stripe.com/docs/webhooks/setup#configure-webhook-settings).
 
 ## FAQ
+
 Q: Why did you pick these frameworks?
 
 A: We chose the most minimal framework to convey the key Stripe calls and concepts you need to understand. These demos are meant as an educational tool that helps you roadmap how to integrate Stripe within your own system independent of the framework.
@@ -87,4 +99,5 @@ Q: Can you show me how to build X?
 A: We are always looking for new sample ideas, please email dev-samples@stripe.com with your suggestion!
 
 ## Author(s)
+
 [@fay-stripe](https://twitter.com/mfaywu)
