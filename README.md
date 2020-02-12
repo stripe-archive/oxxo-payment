@@ -17,6 +17,8 @@ This sample includes 4 server implementations in Node, Ruby, Python, and PHP.
 
 Follow the steps below to run locally.
 
+<img src="./web-oxxo-payment.gif" alt="Collecting a SEPA Debit mandate and payment" align="center">
+
 **1. Clone and configure the sample**
 You can clone the sample here:
 
