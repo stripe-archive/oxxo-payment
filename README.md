@@ -1,6 +1,8 @@
 # Paying with OXXO or Cards on the web 
 Stripe users in Mexico can accept OXXO payments from customers in Mexico by using the Payment Intents and Payment Methods APIs. Customers pay with OXXO by providing a generated number and cash payment at an OXXO store. Stripe will notify you when the payment is completed.
 
+OXXO is currently in private Beta, only available to Mexico users. Interested in participating? Activate the payment method in your [Dashboard settings](https://dashboard.stripe.com/settings/payments).
+
 The [Payment Intents API](https://stripe.com/docs/api/payment_intents) makes it simple to accept multiple payment methods on the web. You can build a payment form that easily handles payment methods like OXXO alongside simpler flows like cards. 
 
 This sample shows how to:
