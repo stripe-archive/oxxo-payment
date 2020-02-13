@@ -1,0 +1,12 @@
+{
+    "name": "oxxo-payment",
+    "configureDotEnv": true,
+    "integrations": [
+      {
+        "name": "main",
+        "clients": ["web"],
+        "servers": ["node", "php", "python", "ruby"]
+      }
+    ]
+  }
+  
