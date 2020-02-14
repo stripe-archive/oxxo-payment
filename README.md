@@ -8,7 +8,7 @@ The [PaymentIntents API](https://stripe.com/docs/api/payment_intents) supports m
 
 This sample shows how to:
 
-- 🏦💳 Accept OXXO and card payments
+- 💵💳 Accept OXXO and card payments
 - 👂 Set up a webhook to listen for events
 - 💁‍ Handle next actions for displaying OXXO voucher details
 
@@ -29,7 +29,24 @@ This sample includes 4 server implementations in Node, Ruby, Python, and PHP.
 Follow the steps below to run locally.
 
 **1. Clone and configure the sample**
-You can clone the sample here:
+
+The Stripe CLI is the fastest way to clone and configure a sample to run locally.
+
+**Using the Stripe CLI**
+
+If you haven't already installed the CLI, follow the [installation steps](https://github.com/stripe/stripe-cli#installation) in the project README. The CLI is useful for cloning samples and locally testing webhooks and Stripe integrations.
+
+In your terminal shell, run the Stripe CLI command to clone the sample:
+
+```
+stripe samples create oxxo-payment
+```
+
+The CLI will walk you through picking your integration type, server and client languages, and configuring your .env config file with your Stripe API keys.
+
+**Installing and cloning manually**
+
+If you do not want to use the Stripe CLI, you can manually clone and configure the sample yourself:
 
 ```
 git clone https://github.com/stripe-samples/oxxo-payment
