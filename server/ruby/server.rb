@@ -50,7 +50,9 @@ post '/create-payment-intent' do
   # Send publishable key and PaymentIntent details to client
   {
     publishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
-    clientSecret: payment_intent['client_secret']
+    clientSecret: payment_intent['client_secret'],
+    apiVersion: ENV['STRIPE_API_VERSION'],
+    oxxoBetaVersion: ENV['OXXO_BETA_VERSION']
   }.to_json
 end
 
@@ -84,8 +86,6 @@ post '/webhook' do
   end
   # Get the type of webhook event sent - used to check the status of PaymentIntents.
   event_type = event['type']
-  data = event['data']
-  data_object = data['object']
 
   if event_type == 'payment_intent.succeeded'
     puts '💰 Payment received!'
