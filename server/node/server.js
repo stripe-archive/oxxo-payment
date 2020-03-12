@@ -56,7 +56,9 @@ app.post('/create-payment-intent', async (req, res) => {
   // Send publishable key and PaymentIntent details to client
   res.send({
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
-    clientSecret: paymentIntent.client_secret
+    clientSecret: paymentIntent.client_secret,
+    apiVersion: process.env.STRIPE_API_VERSION,
+    oxxoBetaVersion: process.env.OXXO_BETA_VERSION
   });
 });
 

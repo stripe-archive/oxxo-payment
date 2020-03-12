@@ -66,9 +66,19 @@ $app->post('/create-payment-intent', function (Request $request, Response $respo
       "currency" => $body->currency,
       "payment_method_types" => ['card', 'oxxo']
     ]);
+
+    $api_version = getenv('STRIPE_API_VERSION');
+    $oxxo_beta_version = getenv('OXXO_BETA_VERSION');
     
     // Send publishable key and PaymentIntent details to client
-    return $response->withJson(array('publishableKey' => $pub_key, 'clientSecret' => $payment_intent->client_secret));
+    return $response->withJson(
+      array(
+        'publishableKey' => $pub_key, 
+        'clientSecret' => $payment_intent->client_secret,
+        'apiVersion' => $api_version,
+        'oxxoBetaVersion' => $oxxo_beta_version
+      )
+    );
 });
 
 $app->post('/webhook', function(Request $request, Response $response) {

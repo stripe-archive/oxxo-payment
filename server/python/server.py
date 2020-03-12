@@ -53,7 +53,12 @@ def create_payment():
 
     try:
         # Send publishable key and PaymentIntent details to client
-        return jsonify({'publishableKey': os.getenv('STRIPE_PUBLISHABLE_KEY'), 'clientSecret': intent.client_secret})
+        return jsonify({
+            'publishableKey': os.getenv('STRIPE_PUBLISHABLE_KEY'), 
+            'clientSecret': intent.client_secret,
+            'apiVersion': os.getenv('STRIPE_API_VERSION'),
+            'oxxoBetaVersion': os.getenv('OXXO_BETA_VERSION')
+        })
     except Exception as e:
         return jsonify(error=str(e)), 403
 
