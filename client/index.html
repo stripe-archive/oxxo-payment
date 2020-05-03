@@ -19,8 +19,8 @@
     <div class="sr-root">
       <div class="sr-main">
         <div class="sr-picker">
-          <button class="sr-pm-button selected" data-paymentmethod="card" id="card-button">Tarjeta</button
-          ><button class="sr-pm-button" id="oxxo-button" data-paymentmethod="oxxo">OXXO</button>
+          <button class="sr-pm-button selected" data-paymentmethod="card" id="card-button">Tarjeta</button>
+          <button class="sr-pm-button" id="oxxo-button" data-paymentmethod="oxxo">OXXO</button>
         </div>
 
         <!-- Payment form for cards -->
@@ -43,13 +43,13 @@
               <!-- Name and email are required for the payment -->
               <div class="col">
                 <label for="name">
-                  Nombre
+                  Nombre completo
                 </label>
                 <input id="name" name="name" placeholder="Fulano de Tal" required  />
               </div>
               <div class="col">
                 <label for="email">
-                  Correo de Electronic
+                  Correo Electrónico
                 </label>
                 <input
                   id="email"
@@ -72,7 +72,7 @@
 
         <!-- Success UI for Cards -->
         <div class="sr-result-card hidden">
-          <p>Pago completado!<br /></p>
+          <p>¡Pago completado!<br /></p>
           <pre>
             <code></code>
           </pre>
@@ -83,17 +83,17 @@
           <h1>¡Gracias! Solo falta un paso más:</h1>
           <div class="sr-instructions">
             <p>
-              Instrucciones de pago en OXXO:
-              <p>1. Entregue el código de al cajero en cualquier OXXO para que lo escanee.</p>
-              <p>2. Proporcione el pago en efectivo al cajero.</p>
-              <p>3. Una vez completado el pago, guarde el recibo de su pago para sus archivos.</p>
-              <p>4. Para cualquier duda o aclaración, contacte el comerciante.</p>
+              Instrucciones para realizar el pago en OXXO:
+              <p>1. Entregue el voucher con el código de barras a la persona en la caja de cualquier tienda OXXO para que ésta lo escanee.</p>
+              <p>2. Proporcione el monto en efectivo a la persona en la caja.</p>
+              <p>3. Una vez completado su pago, guarde el recibo para sus archivos.</p>
+              <p>4. Para cualquier duda o aclaración, contacte al comerciante.</p>
             </p>
           </div>  
           <table class="sr-tabular-info">
             <tr>
               <th>Monto</th>
-              <th>Expira</th>
+              <th>Fecha de expiración</th>
             </tr>
             <tr>
               <td><span class="order-amount"></span></td>
