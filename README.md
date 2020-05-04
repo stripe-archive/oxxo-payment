@@ -14,7 +14,9 @@ This sample shows how to:
 
 ### Demo
 
-<img src="./web-oxxo-payment.gif" alt="Collecting an OXXO payment" align="center">
+<p align="center">
+  <img src="./web-oxxo-payment.gif" alt="Collecting an OXXO payment">
+</p>
 
 See a [hosted version](https://q66ty.sse.codesandbox.io/) of the sample or fork a copy on [codesandbox.io](https://codesandbox.io/s/stripe-sample-oxxo-payment-q66ty)
 
@@ -52,10 +54,11 @@ If you do not want to use the Stripe CLI, you can manually clone and configure t
 git clone https://github.com/stripe-samples/oxxo-payment
 ```
 
-Copy the .env.example file into a file named .env in the folder of the server you want to use. For example:
+Copy the .env.example file into a file named .env in the folder of the server you want to use.
 
 ```
-cp .env.example server/node/.env
+cd oxxo-payment
+cp .env.example server/<node|php|python|ruby>/.env 
 ```
 
 You will need a Stripe account in order to run the demo. Once you set up your account, go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys.
