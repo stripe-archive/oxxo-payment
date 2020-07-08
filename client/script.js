@@ -122,16 +122,12 @@ var payWithOxxo = function(stripe, clientSecret) {
           }
         }
       },
-      { handleActions: false }
+      { handleActions: true }
     )
     .then(function(result) {
       if (result.error) {
         // Show error to your customer
         showError(result.error.message);
-      } else {
-        // The OXXO voucher has been created
-        // Display the OXXO details to your customer
-        displayOxxoDetails(clientSecret);
       }
     });
 };
@@ -151,48 +147,6 @@ var orderComplete = function(clientSecret) {
     document.querySelector(".sr-result-card").classList.remove("hidden");
     setTimeout(function() {
       document.querySelector(".sr-result-card").classList.add("expand");
-    }, 200);
-
-    changeLoadingState(false);
-  });
-};
-
-/* Display the OXXO details to your customer when the voucher has been created */
-var displayOxxoDetails = function(clientSecret) {
-  stripe.retrievePaymentIntent(clientSecret).then(function(result) {
-    var paymentIntent = result.paymentIntent;
-    const number = paymentIntent.next_action.display_oxxo_details.number;
-
-    var price = (paymentIntent.amount / 100).toFixed(2);
-    var numberFormat = new Intl.NumberFormat(["es-MX"], {
-      style: "currency",
-      currency: paymentIntent.currency,
-      currencyDisplay: "symbol"
-    });
-
-    document.querySelector(".order-amount").innerText = numberFormat.format(
-      price
-    );
-
-    document.querySelector(".oxxo-expiry-date").innerText = new Date(
-      paymentIntent.next_action.display_oxxo_details.expires_after * 1000
-    ).toLocaleDateString("es-MX");
-
-    document.querySelector(".oxxo-display").innerHTML = '<svg id="barcode"></svg>';
-
-    JsBarcode("#barcode", number, {
-      // Group the numbers in 4 to make it easier to key i.
-      text: number.match(/.{1,4}/g).join("  "),
-      width: 2,
-      height: 50,
-      fontSize: 15
-    });
-
-    document.querySelector(".sr-payment-form.oxxo").classList.add("hidden");
-    document.querySelector(".sr-picker").classList.add("hidden");
-    document.querySelector(".sr-result-oxxo").classList.remove("hidden");
-    setTimeout(function() {
-      document.querySelector(".sr-result-oxxo").classList.add("expand");
     }, 200);
 
     changeLoadingState(false);
