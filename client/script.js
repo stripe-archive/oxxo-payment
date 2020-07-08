@@ -121,8 +121,7 @@ var payWithOxxo = function(stripe, clientSecret) {
             email: document.querySelector('input[name="email"]').value
           }
         }
-      },
-      { handleActions: true }
+      }
     )
     .then(function(result) {
       if (result.error) {
