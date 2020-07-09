@@ -164,10 +164,6 @@ input[type="text"]::placeholder {
   height: 350px;
 }
 
-.sr-result-oxxo {
-  text-align: center;
-}
-
 .sr-combo-inputs {
   display: flex;
   width: 100%;
