@@ -128,6 +128,7 @@ var payWithOxxo = function(stripe, clientSecret) {
         // Show error to your customer
         showError(result.error.message);
       }
+      changeLoadingState(false);
     });
 };
 
