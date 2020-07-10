@@ -46,6 +46,12 @@ stripe samples create oxxo-payment
 
 The CLI will walk you through picking your integration type, server and client languages, and configuring your .env config file with your Stripe API keys.
 
+Because OXXO is in private beta, you will also need to specify a Stripe API version as well as the OXXO beta version. You can see which API version you're running at https://dashboard.stripe.com/developers.
+
+```
+STRIPE_API_VERSION=<replace-with-your-api-version>
+```
+
 **Installing and cloning manually**
 
 If you do not want to use the Stripe CLI, you can manually clone and configure the sample yourself:
