@@ -6,13 +6,14 @@ var orderData = {
   currency: "mxn" // OXXO only accepts MXN
 };
 
-fetch("/create-payment-intent", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(orderData)
-})
+function createPaymentIntent() {
+  fetch("/create-payment-intent", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(orderData)
+  })
   .then(function(result) {
     return result.json();
   })
@@ -33,7 +34,7 @@ fetch("/create-payment-intent", {
         evt.preventDefault();
         // Initiate payment when the submit button is clicked
         payWithOxxo(stripe, clientSecret);
-      });
+      }, {once: true});
     document.querySelectorAll(".sr-pm-button").forEach(function(el) {
       el.addEventListener("click", function(evt) {
         // Handle switching between Card and OXXO
@@ -49,9 +50,12 @@ fetch("/create-payment-intent", {
           document.querySelector("#card-button").classList.remove("selected");
           document.querySelector("#oxxo-button").classList.add("selected");
         }
-      });
+      }, {once: true});
     });
   });
+}
+
+createPaymentIntent()
 
 // Set up Stripe.js and Elements to use in checkout form
 var setupElements = function(data) {
@@ -128,6 +132,8 @@ var payWithOxxo = function(stripe, clientSecret) {
         // Show error to your customer
         showError(result.error.message);
       }
+      changeLoadingState(false);
+      createPaymentIntent()
     });
 };
 
