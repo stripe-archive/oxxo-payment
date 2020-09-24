@@ -16,7 +16,6 @@ from dotenv import load_dotenv, find_dotenv
 # Setup Stripe python client library
 load_dotenv(find_dotenv())
 stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
-stripe.api_version = '%s; oxxo_beta=%s' % (os.getenv('STRIPE_API_VERSION'), os.getenv('OXXO_BETA_VERSION'))
 
 static_dir = str(os.path.abspath(os.path.join(__file__, '..', os.getenv('STATIC_DIR'))))
 app = Flask(
@@ -62,8 +61,6 @@ def create_payment():
         return jsonify({
             'publishableKey': os.getenv('STRIPE_PUBLISHABLE_KEY'),
             'clientSecret': intent.client_secret,
-            'apiVersion': os.getenv('STRIPE_API_VERSION'),
-            'oxxoBetaVersion': os.getenv('OXXO_BETA_VERSION')
         })
     except Exception as e:
         return jsonify(error=str(e)), 403

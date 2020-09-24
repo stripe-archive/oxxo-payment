@@ -4,9 +4,6 @@ const { resolve } = require('path');
 // Replace if using a different env file or config
 const env = require('dotenv').config({ path: './.env' });
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-stripe.setApiVersion(
-  `${process.env.STRIPE_API_VERSION}; oxxo_beta=${process.env.OXXO_BETA_VERSION}`
-);
 
 app.use(express.static(process.env.STATIC_DIR));
 app.use(
@@ -57,8 +54,6 @@ app.post('/create-payment-intent', async (req, res) => {
   res.send({
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
     clientSecret: paymentIntent.client_secret,
-    apiVersion: process.env.STRIPE_API_VERSION,
-    oxxoBetaVersion: process.env.OXXO_BETA_VERSION
   });
 });
 
