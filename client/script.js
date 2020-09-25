@@ -59,10 +59,7 @@ createPaymentIntent()
 
 // Set up Stripe.js and Elements to use in checkout form
 var setupElements = function(data) {
-  stripe = Stripe(data.publishableKey, { 
-    betas: ["oxxo_pm_beta_1"], 
-    apiVersion: `${data.apiVersion};oxxo_beta=${data.oxxoBetaVersion}`
-  });
+  stripe = Stripe(data.publishableKey);
   var elements = stripe.elements({ locale: "es" }); // locale will translate placeholder
   var style = {
     base: {

@@ -2,7 +2,7 @@
 
 Stripe users in Mexico can accept OXXO payments from customers in Mexico by using the Payment Intents and Payment Methods APIs. Customers pay with OXXO by providing a generated number and cash payment at an OXXO store. Stripe will notify you when the payment is completed.
 
-OXXO is currently in private beta, only available Stripe users in Mexico. Interested in participating? Activate the payment method in your [Dashboard settings](https://dashboard.stripe.com/settings/payments).
+Read more about OXXO at https://stripe.com/docs/payments/oxxo.
 
 The [PaymentIntents API](https://stripe.com/docs/api/payment_intents) supports multiple payment methods, allowing you to build a payment form that handles payment methods like OXXO alongside other methods like cards.
 
@@ -46,12 +46,6 @@ stripe samples create oxxo-payment
 
 The CLI will walk you through picking your integration type, server and client languages, and configuring your .env config file with your Stripe API keys.
 
-Because OXXO is in private beta, you will also need to specify a Stripe API version as well as the OXXO beta version. You can see which API version you're running at https://dashboard.stripe.com/developers.
-
-```
-STRIPE_API_VERSION=<replace-with-your-api-version>
-```
-
 **Installing and cloning manually**
 
 If you do not want to use the Stripe CLI, you can manually clone and configure the sample yourself:
@@ -72,16 +66,6 @@ You will need a Stripe account in order to run the demo. Once you set up your ac
 ```
 STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
 STRIPE_SECRET_KEY=<replace-with-your-secret-key>
-```
-
-Because OXXO is in private beta, you will also need to specify a Stripe API version as well as the OXXO beta version.
-You can see which API version you're running at https://dashboard.stripe.com/developers.
-
-The current OXXO beta version is v2. You can see all released versions at https://stripe.com/docs/payments/oxxo#api.
-
-```
-STRIPE_API_VERSION=<replace-with-your-api-version>
-OXXO_BETA_VERSION=v2
 ```
 
 `STATIC_DIR` tells the server where to the client files are located and does not need to be modified unless you move the server files.

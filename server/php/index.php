@@ -28,9 +28,6 @@ $container['logger'] = function ($c) {
 
 $app->add(function ($request, $response, $next) {
     Stripe::setApiKey(getenv('STRIPE_SECRET_KEY'));
-    $api_version = getenv('STRIPE_API_VERSION');
-    $oxxo_beta_version = getenv('OXXO_BETA_VERSION');
-    Stripe::setApiVersion("$api_version; oxxo_beta=$oxxo_beta_version");
     return $next($request, $response);
 });
 
@@ -66,17 +63,12 @@ $app->post('/create-payment-intent', function (Request $request, Response $respo
       "currency" => $body->currency,
       "payment_method_types" => ['card', 'oxxo']
     ]);
-
-    $api_version = getenv('STRIPE_API_VERSION');
-    $oxxo_beta_version = getenv('OXXO_BETA_VERSION');
     
     // Send publishable key and PaymentIntent details to client
     return $response->withJson(
       array(
         'publishableKey' => $pub_key, 
         'clientSecret' => $payment_intent->client_secret,
-        'apiVersion' => $api_version,
-        'oxxoBetaVersion' => $oxxo_beta_version
       )
     );
 });
