@@ -17,12 +17,12 @@
     <div class="sr-root">
       <div class="sr-main">
         <div class="sr-picker">
-          <button class="sr-pm-button selected" data-paymentmethod="card" id="card-button">Tarjeta</button>
-          <button class="sr-pm-button" id="oxxo-button" data-paymentmethod="oxxo">OXXO</button>
+          <button class="sr-pm-button selected" id="oxxo-button" data-paymentmethod="oxxo">OXXO</button>
+          <button class="sr-pm-button" data-paymentmethod="card" id="card-button">Tarjeta</button>
         </div>
 
         <!-- Payment form for cards -->
-        <form class="sr-payment-form card">
+        <form class="sr-payment-form card hidden">
           <div>
             <div class="sr-input sr-element sr-card-element" id="card-element">
               <!-- A Stripe card Element will be inserted here. -->
@@ -35,7 +35,7 @@
         </form>
 
         <!-- Payment form for Oxxo -->
-        <form class="sr-payment-form oxxo hidden">
+        <form class="sr-payment-form oxxo">
           <div>
             <div class="sr-combo-inputs" id="oxxo-billing-details">
               <!-- Name and email are required for the payment -->
@@ -74,33 +74,6 @@
           <pre>
             <code></code>
           </pre>
-        </div>
-
-        <!-- Success UI for Oxxo -->
-        <div class="sr-result-oxxo hidden">
-          <h1>¡Gracias! Solo falta un paso más:</h1>
-          <div class="sr-instructions">
-            <p>
-              Instrucciones para realizar el pago en OXXO:
-              <p>1. Entregue el voucher con el código de barras a la persona en la caja de cualquier tienda OXXO para que ésta lo escanee.</p>
-              <p>2. Proporcione el monto en efectivo a la persona en la caja.</p>
-              <p>3. Una vez completado su pago, guarde el recibo para sus archivos.</p>
-              <p>4. Para cualquier duda o aclaración, contacte al comerciante.</p>
-            </p>
-          </div>  
-          <table class="sr-tabular-info">
-            <tr>
-              <th>Monto</th>
-              <th>Fecha de expiración</th>
-            </tr>
-            <tr>
-              <td><span class="order-amount"></span></td>
-              <td><span class="oxxo-expiry-date"></span></td>
-            </tr>
-          </table>
-
-          <img width="150px" src="https://cdn.glitch.com/4b07d8fe-0ac6-478d-9303-5ed5d5c1220d%2Foxxo.png?v=1571866932777" alt="OXXO logo">
-          <div class="oxxo-display"></div>
         </div>
       </div>
     </div>

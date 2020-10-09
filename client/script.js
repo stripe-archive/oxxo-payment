@@ -50,7 +50,7 @@ function createPaymentIntent() {
           document.querySelector("#card-button").classList.remove("selected");
           document.querySelector("#oxxo-button").classList.add("selected");
         }
-      }, {once: true});
+      });
     });
   });
 }
@@ -60,7 +60,7 @@ createPaymentIntent()
 // Set up Stripe.js and Elements to use in checkout form
 var setupElements = function(data) {
   stripe = Stripe(data.publishableKey);
-  var elements = stripe.elements({ locale: "es" }); // locale will translate placeholder
+  var elements = stripe.elements({ locale: "es-419" }); // locale will translate placeholder
   var style = {
     base: {
       color: "#32325d",
