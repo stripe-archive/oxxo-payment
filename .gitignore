@@ -1,7 +1,8 @@
 .DS_Store
 .env
 .idea
-.vscode
+.vscode/*
+!.vscode/extensions.json
 
 # Node files
 node_modules/
