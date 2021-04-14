@@ -1,3 +1,7 @@
+<table><tbody><tr><td valign="center"><img src="https://lh3.googleusercontent.com/kWMH3aQzcvLmucr5wIL-2BlmiFDgQgiB-fCS6J2Du7H-T1zL3rWP7JU2Om81dIkStE3mP6cLYt1fhCCIPHY6RYMpUg7oRphN11bCz--0Mv4PrsrhfrmdMurdt2XeEYbUKvqYnrj-" align="left" width="250"></td><td valign="center"> This project is deprecated and is no longer being actively being actively maintained. </td></tr></tbody></table>
+
+Please see the [Accept a payment](https://github.com/stripe-samples/accept-a-payment) sample showing how to implement OXXO with Elements and more.
+
 # Paying with OXXO or Cards on the web
 
 Stripe users in Mexico can accept OXXO payments from customers in Mexico by using the Payment Intents and Payment Methods APIs. Customers pay with OXXO by providing a generated number and cash payment at an OXXO store. Stripe will notify you when the payment is completed.
